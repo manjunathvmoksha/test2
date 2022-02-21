@@ -6,17 +6,19 @@ const mix = require('laravel-mix');
  |--------------------------------------------------------------------------
  |
  | Mix provides a clean, fluent API for defining some Webpack build steps
- | for your Laravel application. By default, we are compiling the Sass
+ | for your Laravel applications. By default, we are compiling the CSS
  | file for the application as well as bundling up all the JS files.
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-    .vue()
-    .sass('resources/sass/app.scss', 'public/css');
+mix.js('resources/js/app.js', 'public/js').vue().postCss('resources/css/app.css', 'public/css', [
+    require('postcss-import'),
+    require('tailwindcss'),
+    require('autoprefixer'),
+]);
 
-mix.webpackConfig(webpack =>{
-    return{
+mix.webpackConfig( webpack => {
+    return {
         resolve : {
             alias: {
                 videojs: 'video.js',
@@ -24,8 +26,8 @@ mix.webpackConfig(webpack =>{
                 RecordRTC: 'recordrtc'
             }
         },
-        plugins: [
-            new webpack.ProviderPlugin({
+        plugins : [
+            new webpack.ProvidePlugin({
                 videojs: 'video.js/dist/video.cjs.js',
                 RecordRTC: 'recordrtc'
             })
@@ -33,3 +35,4 @@ mix.webpackConfig(webpack =>{
     }
 })
 
+mix.disableNotifications();

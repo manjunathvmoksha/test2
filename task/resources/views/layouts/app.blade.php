@@ -14,7 +14,8 @@
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
         <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
         <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"> -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+        <script src="https://www.google.com/recaptcha/api.js?onload=vueRecaptchaApiLoaded&render=explicit" async defer></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
         <!-- Scripts -->
@@ -37,6 +38,27 @@
             }
             .label-font{
                 font-size: 24px;
+            }
+            #btnStart
+            {
+                padding: 5px;
+                border-radius: 5px;
+            }
+            .btn
+            {
+                color: #ffffff;
+                padding: 5px;
+                border-radius: 5px;
+                margin-right: 5px;
+            }
+             .btn-success{
+                background-color: #007500;
+            }
+            .btn-info{
+                background-color: blue;
+            }
+            .btn-primary{
+                background: grey;
             }
         </style>
     </head>

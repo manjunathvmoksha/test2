@@ -18,7 +18,7 @@
                                 <td class="p-6">
                                     <label class="label-font">{{$j->subject}}</label><br><br>
                                     <a class="link-btn" href="../userquestions/{{$j->subject}}/1">
-                                        Continue Course
+                                        Continue Test
                                     </a>
                                 </td>
                             @endforeach
